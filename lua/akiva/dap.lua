@@ -8,7 +8,7 @@ dap.listeners.before.event_terminated["dapui_config"] = function() dapui.close()
 
 dap.adapters.lldb = {
     type = "executable",
-    command = "/usr/bin/lldb-dap",
+    command = "/usr/lib/llvm-18/bin/lldb-dap",
     name = "lldb",
 }
 

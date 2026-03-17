@@ -95,22 +95,16 @@ return {
     dap.listeners.before.event_terminated["dapui_config"] = function() dapui.close() end
   end,
 },
-
-{
-    'Maduki-tech/nvim-plantuml',
-    config = function()
-        require('plantuml').setup({
-            output_dir = '/tmp',
-            viewer = 'xdg-open',
-            auto_refresh = true,
-        })
-    end
+{"windwp/nvim-autopairs",
+    event = "InsertEnter",
+    config = true
 },
-{"3rd/image.nvim",
-    config = function()
-        require("image").setup({
-            backend = "kitty",
-        })
-    end
+{"yorickpeterse/nvim-window",
+    keys = {
+        { "<leader>wj", "<cmd> lua require('nvim-window').pick()<cr>",
+            desc = "nvim-window: Jump to window" }
+    },
+    config = true;
 }
-}
+
+    }
