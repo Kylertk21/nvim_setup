@@ -15,6 +15,17 @@ vim.keymap.set("n", "<leader>cm", ":!make<CR>")
 vim.keymap.set("n", "<leader>r2", function()
     vim.cmd("vsplit | terminal r2 " .. vim.fn.expand("%:r"))
 end)
+
+local telescope_builtin = require('telescope.builtin')
+vim.keymap.set('n', '<leader>fo', function()
+    telescope_builtin.find_files({ cwd = vim.fn.expand('%:p:h')}) -- % file :p path :h head
+end, { desc= "Telescope current pane's dir" })
+vim.keymap.set('n', '<leader>fg', function()
+    telescope_builtin.live_grep({ cwd = vim.fn.expand('%:p:h')})
+end, { desc = "Live grep in current pane's dir"})
+
+
+
 vim.g.clipboard = {
   name = 'OSC 52',
   copy = {
